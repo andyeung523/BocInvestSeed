@@ -11,7 +11,19 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Image.asset(
+              'assets/logo.png', width: 100.0, height: 100.0,
+            ),
+          ],
+        )
+      )
     );
     //return MaterialApp(
     //  title: 'Dashboard',
