@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_login/theme.dart';
 import 'package:flutter_login/widgets.dart';
+import 'package:invest_game/page/home.dart';
 import 'transition_route_observer.dart';
 import 'widgets/fade_in.dart';
 import 'constants.dart';
+import 'custom_route.dart';
 import 'widgets/animated_numeric_text.dart';
 import 'widgets/round_button.dart';
 
@@ -184,12 +186,15 @@ class _DashboardScreenState extends State<DashboardScreen>
         interval.end,
         curve: ElasticOutCurve(0.42),
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pushReplacement(
+      context, MaterialPageRoute(builder: (BuildContext context) => Home()));
+      },
     );
   }
 
   Widget _buildDashboardGrid() {
-    const step = 0.04;
+    const step = 0.04;  
     const aniInterval = 0.75;
 
     return GridView.count(
@@ -199,7 +204,7 @@ class _DashboardScreenState extends State<DashboardScreen>
       ),
       childAspectRatio: .9,
       // crossAxisSpacing: 5,
-      crossAxisCount: 3,
+      crossAxisCount: 2,
       children: [
         _buildButton(
           icon: Icon(FontAwesomeIcons.user),
@@ -224,36 +229,12 @@ class _DashboardScreenState extends State<DashboardScreen>
           label: 'Payment',
           interval: Interval(step * 2, aniInterval + step * 2),
         ),
-        _buildButton(
-          icon: Icon(FontAwesomeIcons.chartLine),
-          label: 'Report',
-          interval: Interval(0, aniInterval),
-        ),
+        
         _buildButton(
           icon: Icon(Icons.vpn_key),
           label: 'Register',
           interval: Interval(step, aniInterval + step),
-        ),
-        _buildButton(
-          icon: Icon(FontAwesomeIcons.history),
-          label: 'History',
-          interval: Interval(step * 2, aniInterval + step * 2),
-        ),
-        _buildButton(
-          icon: Icon(FontAwesomeIcons.ellipsisH),
-          label: 'Other',
-          interval: Interval(0, aniInterval),
-        ),
-        _buildButton(
-          icon: Icon(FontAwesomeIcons.search, size: 20),
-          label: 'Search',
-          interval: Interval(step, aniInterval + step),
-        ),
-        _buildButton(
-          icon: Icon(FontAwesomeIcons.slidersH, size: 20),
-          label: 'Settings',
-          interval: Interval(step * 2, aniInterval + step * 2),
-        ),
+        )
       ],
     );
   }
@@ -268,7 +249,7 @@ class _DashboardScreenState extends State<DashboardScreen>
         children: <Widget>[
           RaisedButton(
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            color: Colors.red,
+            color: Colors.white,
             child: Text('loading', style: textStyle),
             onPressed: () => _loadingController.value == 0
                 ? _loadingController.forward()
@@ -311,12 +292,10 @@ class _DashboardScreenState extends State<DashboardScreen>
                             end: Alignment.bottomRight,
                             tileMode: TileMode.clamp,
                             colors: <Color>[
-                              Colors.deepPurpleAccent.shade100,
-                              Colors.deepPurple.shade100,
-                              Colors.deepPurple.shade100,
-                              Colors.deepPurple.shade100,
-                              // Colors.red,
-                              // Colors.yellow,
+                              
+                             
+                              Colors.white,
+                              Colors.white,
                             ],
                           ).createShader(bounds);
                         },
@@ -325,7 +304,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                     ),
                   ],
                 ),
-                if (!kReleaseMode) _buildDebugButtons(),
+                //if (!kReleaseMode) _buildDebugButtons(),
               ],
             ),
           ),
