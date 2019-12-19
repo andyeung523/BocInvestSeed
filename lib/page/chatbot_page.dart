@@ -27,6 +27,11 @@ class _ChatbotState extends State<Chatbot> {
     super.dispose();
   }
 
+  BoxDecoration myBoxDecoration() {
+  return BoxDecoration(
+    border: Border.all(),
+  );
+}
   
   @override
   Widget build(BuildContext context) {
@@ -51,31 +56,67 @@ class _ChatbotState extends State<Chatbot> {
         // Set the background color of the App Bar
         
       ),
-      bottomSheet: 
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              controller: myController,
+      
+      floatingActionButton: 
+        FloatingActionButton(
+      
+        
+        // When the user presses the button, show an alert dialog containing
+        // the text that the user has entered into the text field.
+        onPressed: () {
+          return showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                // Retrieve the text the that user has entered by using the
+                // TextEditingController.
+                content: Text(myController.text),
+              );
+            },
+          );
+        }, 
+        tooltip: 'Show me the value!',
+        child: Icon(
+          Icons.send,
+          color: Colors.white,
+        ),
+      ),
+      
+      body: Row(
+        children: <Widget>[
+          Expanded(
+            flex: 4,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.cyan,
+              child: Text('1'),
             ),
           ),
           
-            // // flex: 2,
-            // Container(
-            //   padding: EdgeInsets.all(30.0),
-            //   color: Colors.pinkAccent,
-            //   child: Text('2'),
-            // ),
-          
-          // Expanded(
-          //   flex: 1,
-          //   child: Container(
-          //     padding: EdgeInsets.all(30.0),
-          //     color: Colors.amber,
-          //     child: Text('3'),
-          //   ),
-          // ),
-        
-      
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.amber,
+              child: Text('3'),
+            ),
+          ),
+        ],
+      ),
+
+
+
+        bottomNavigationBar: 
+        BottomAppBar(
+                  child: Padding(
+            padding: const EdgeInsets.fromLTRB(20.0,0,20.0,20.0),
+            child: TextField(
+              style: TextStyle(fontSize: 25.0),
+              controller: myController,
+            ),
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
     );
   }
 }
