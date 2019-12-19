@@ -18,7 +18,16 @@ class _ChatbotState extends State<Chatbot> {
     Message('test4'),
   ];
 
+  final myController = TextEditingController();
 
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    myController.dispose();
+    super.dispose();
+  }
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,15 +51,34 @@ class _ChatbotState extends State<Chatbot> {
         // Set the background color of the App Bar
         
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: message.map((m) => Text('${m.message}')).toList(),
-        
+      bottomSheet: Row(
+        children: <Widget>[
+          Expanded(
+            flex: 3,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.cyan,
+              child: Text('1'),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.pinkAccent,
+              child: Text('2'),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.amber,
+              child: Text('3'),
+            ),
+          ),
+        ],
       ),
-      // Set the bottom navigation bar
-      
     );
   }
-  
 }

@@ -37,31 +37,18 @@ var currentPage = images.length - 1.0;
               SizedBox( 
                 height: 10.0,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    
-                    Text("Popular Ideas",
-                        style: TextStyle(
-                          color: Color.fromRGBO(159, 42, 51,1),
-                          fontSize: 35.0,
-                          fontFamily: "Calibre-Semibold",
-                          letterSpacing: 1.0,
-                          
-                        )),
-                    IconButton(
-                      icon: Icon(
-                        CustomIcons.option,
-                        size: 12.0,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {},
-                    )
-                  ],
+              Text(
+                "Popular Ideas",
+                style: TextStyle(
+                color: Color.fromRGBO(159, 42, 51,1),
+                fontSize: 35.0,
+                fontFamily: "Calibre-Semibold",
+                letterSpacing: 1.0,
                 ),
+                textAlign: TextAlign.left,
               ),
+
+              
               Padding(
                 padding: const EdgeInsets.only(left: 20.0),
                 child: Row(
