@@ -1,75 +1,92 @@
 import 'package:flutter/material.dart';
-import 'package:invest_game/model/login/dashboard_screen.dart';
-import 'package:invest_game/model/login/custom_route.dart';
+import 'tabs/top_idea.dart';
+import 'tabs/search.dart';
+import 'tabs/my_idea.dart';
 import 'package:invest_game/page/home.dart';
-
+import 'package:invest_game/model/login/custom_route.dart';
 
 class DreamHub extends StatefulWidget {
   @override
   _DreamHubState createState() => _DreamHubState();
 }
 
-class _DreamHubState extends State<DreamHub> {
+// SingleTickerProviderStateMixin is used for animation
+class _DreamHubState extends State<DreamHub> with SingleTickerProviderStateMixin {
+  // Create a tab controller
+  TabController controller;
+
   @override
+  void initState() {
+    super.initState();
+
+    // Initialize the Tab Controller
+    controller = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    // Dispose of the Tab Controller
+    controller.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child:
-          Center(
-            child: Container(
-              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center, 
-                mainAxisSize: MainAxisSize.max, 
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                    Image.asset( //Dream Hub
-                    'assets/dream_hub.png', width: 100.0, height: 100.0,
-                    ),
-                    SizedBox(
-                      width: 250,
-                      // height: double.infinity,
-                      child: FlatButton(
-                        padding: EdgeInsets.all(12.0),
-                        color: Color.fromRGBO(159, 42, 51, 1),
-                        onPressed: () {
-                          Navigator.of(context).pushReplacement(FadePageRoute(
-                            builder: (context) => Home(),
-                          ));
-                        },
-                        child: Text(
-                          'Chat Bot',
-                          style: TextStyle(fontSize: 20.0,color: Colors.white),
-                        ),
-                      ),
-                    ),
-                ],
-              )
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.home),
+          color: Colors.black,
+          onPressed: () {
+            Navigator.of(context).pushReplacement(FadePageRoute(
+            builder: (context) => Home(),
+            ));
+          },
+          
+        ),
+        // Title
+
+        title: Text(
+          "Dream Hub",
+          style: TextStyle(color: Colors.black)
+        ),
+        // Set the background color of the App Bar
+        backgroundColor: Colors.white,
+      ),
+      body: TabBarView(
+        // Add tabs as widgets
+        children: <Widget>[My_idea(), Search(), Top_idea()],
+        // set the controller
+        controller: controller,
+      ),
+      // Set the bottom navigation bar
+      bottomNavigationBar: Material(
+        // set the color of the bottom navigation bar
+        color: Colors.white,
+        // set the tab bar as the child of bottom navigation bar
+        child: TabBar(
+          labelColor: Colors.black,
+
+          tabs: <Tab>[
+            Tab(
+              // set icon to the tab
+              icon: Icon(Icons.add_circle_outline),
+              text: "My Idea",
             ),
-          )
-      )
+            Tab(
+              icon: Icon(Icons.search),
+              text: "Search"
+            ),
+            Tab(
+              icon: Icon(Icons.trending_up),
+              text: "Top Idea"
+            ),
+          ],
+          // setup the controller
+          controller: controller,
+        ),
+      ),
     );
-    //return MaterialApp(
-    //  title: 'Dashboard',
-    //  theme: ThemeData(
-    //    primarySwatch: Colors.deepOrange,
-    //    accentColor: Colors.orange,
-    //    cursorColor: Colors.orange,
-    //    textTheme: TextTheme(
-    //      display2: TextStyle(
-    //        fontFamily: 'OpenSans',
-    //        fontSize: 45.0,
-    //        color: Colors.orange,
-    //      ),
-    //      button: TextStyle(
-    //        fontFamily: 'OpenSans',
-    //      ),
-    //      subhead: TextStyle(fontFamily: 'NotoSans'),
-    //      body1: TextStyle(fontFamily: 'NotoSans'),
-    //    ),
-    //  ),
-    //  home: DashboardScreen(),
-    //);
   }
+  
 }
