@@ -27,6 +27,18 @@ class StockAPI {
     final identifier = "218d1356-d15b-491c-aba6-49ac9c888b01";
     final secret = "J0vU1yF1jX3hM2tH5sQ2rK3rM0fR1sP0rF5jF4yX1xV7yA1gJ8";
     final credentialsFile = new File("C:\Users\ycm\Developer\Flutter\BocHack\invest_game\lib\model\login\credentials.json"); 
+    //stock_code":"1","name_en":"CKH HOLDINGS","name_tc":"長和","price":"71.75","change":"-0.45","change_pct":"-0.62","pe_ratio":"7.1","turnover":"309210000"
+    int stock_code=0;
+    String name_en = '';
+    double price = 0.0;
+    double chnage = 0.0;
+    double change_pct = 0.0;
+    double pe_ratio = 0.0;
+    int turnover = 0;
+    
+    
+    
+
     /// Either load an OAuth2 client from saved credentials or authenticate a new
     /// one.
     StockAPI();
@@ -69,5 +81,38 @@ class StockAPI {
         print('here is r');
         print(r);
         return Future.value(double.parse(r));  
+    }
+
+    Future<Void> get_stock_info(var num) async {
+        // Calling the top-level `clientCredentialsGrant` function will return a
+        // [Client] instead.
+        print('sd');
+        print('$Client');
+        var client = await oauth2.clientCredentialsGrant(
+            authorizationEndpoint, identifier, secret, scopes: ['all']);
+        //print('$response');
+
+        // With an authenticated client, you can make requests, and the `Bearer` token
+        // returned by the server during the client credentials grant will be attached
+        // to any request you make.
+        var response = await client.read("https://api.au-syd.apiconnect.appdomain.cloud/bochk-fintech-dev/sb/api/investments/stock-price?stock_code=$num");
+        print('$response');
+        
+        Map<String, dynamic> map = jsonDecode(response);
+        // You can save the client's credentials, which consists of an access token, and
+        // potentially a refresh token and expiry date, to a file. This way, subsequent runs
+        // do not need to reauthenticate, and you can avoid saving the client identifier and
+        // secret.
+        //await credentialsFile.writeAsString(client.credentials.toJson());
+        this.price = map['price'];
+        this.stock_code = map['stock_code'];
+        this.name_en = map['name_en'];
+        this.chnage = map['change'];
+        this.change_pct = map['change_pct']; 
+        this.pe_ratio = map['price'];
+        this.turnover = map['price'];
+        print('$response');
+        print('here is r');
+        return null;
     }
 }
