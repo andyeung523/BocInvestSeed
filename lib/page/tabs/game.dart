@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import '../home.dart';
 import 'customIcons.dart';
 import 'data.dart';
 import 'dart:math';
 import 'dart:io';
+import 'package:invest_game/model/login/custom_route.dart';
 // import 'package:oauth2/oauth2.dart' as oauth2;
 import 'package:oauth2/oauth2.dart';
 import 'package:invest_game/model/login/stockAPI.dart';
+import 'package:invest_game/page/tabs/query.dart';
 
 class Game extends StatefulWidget {
   @override
@@ -39,26 +42,159 @@ var _price;
     return Container(
       
       child: Scaffold(
+        resizeToAvoidBottomInset: false,  
         backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              FlatButton(
-                        padding: EdgeInsets.all(12.0),
-                        color: Color.fromRGBO(159, 42, 51, 1),
-                        onPressed : () async {
-                          print('object');
-                          double p = await api.getPrice(0001) ;
-                          setState(() {
-                            _price = p;
-                          });
-                        }
-                          ),
-              Text('$_price'),           
-            ],
+        body: 
+        SingleChildScrollView(
+          child:Column(
+            //padding: EdgeInsets.only(top: 12),
+            children :<Widget>[
+              Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('  Account'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+                
+                Expanded(
+                  flex: 6,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    padding: EdgeInsets.all(30.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Text('XXX Account'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+              ],
+            ),//copy here
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('  Other Type'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+                
+                Expanded(
+                  flex: 6,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    padding: EdgeInsets.all(30.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Row(
+                      children: <Widget>[
+                        Radio(),
+                        Text('Limit Order'),
+                        Radio(),
+                        Text('Market Order')
+                      ],
+                    ),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('  BuySell'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+                
+                Expanded(
+                  flex: 6,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    padding: EdgeInsets.all(30.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Row(
+                      children: <Widget>[
+                        Radio(),
+                        Text('Buy'),
+                        Radio(),
+                        Text('Sell')
+                      ],
+                    ),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+              ],
+            ),//copy here
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('  Stock Code'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+                
+                Expanded(
+                  flex: 6,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    padding: EdgeInsets.all(30.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: TextFormField(
+
+                      decoration: InputDecoration(
+                          hintText: 'Please search',
+                          fillColor: Color.fromRGBO(255, 210, 213, 1),
+                          focusColor: Color.fromRGBO(159, 42, 51, 1),
+                          enabledBorder: UnderlineInputBorder(      
+                            borderSide: BorderSide(color: Color.fromRGBO(159, 42, 51, 1)),   
+                          ),  
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),  
+                          filled: true,
+                          suffixIcon: IconButton(
+                              icon: Icon(Icons.search, color: Colors.black),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Query()),
+                                );
+                              })),
+                    ),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+              ],
+            ),//copy here
             
-          ),
-        ),
+            ], 
+          )  ),
       ),
     );
   }
@@ -167,3 +303,19 @@ class CardScrollWidget extends StatelessWidget {
     );
   }
 }
+
+
+
+              //FlatButton(
+              //          padding: EdgeInsets.all(12.0),
+              //          color: Color.fromRGBO(159, 42, 51, 1),
+              //          onPressed : () async {
+              //            print('object');
+              //            double p = await api.getPrice(0001) ;
+              //            api.get_stock_info(1);
+              //            setState(() {
+              //              _price = p;
+              //            });
+              //          }
+              //            ),
+              //Text('$_price'),

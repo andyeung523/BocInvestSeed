@@ -31,7 +31,7 @@ class StockAPI {
     int stock_code=0;
     String name_en = '';
     double price = 0.0;
-    double chnage = 0.0;
+    double change = 0.0;
     double change_pct = 0.0;
     double pe_ratio = 0.0;
     int turnover = 0;
@@ -58,7 +58,7 @@ class StockAPI {
     Future<double> getPrice(var num) async {
         // Calling the top-level `clientCredentialsGrant` function will return a
         // [Client] instead.
-        print('sd');
+        print('getprice');
         print('$Client');
         var client = await oauth2.clientCredentialsGrant(
             authorizationEndpoint, identifier, secret, scopes: ['all']);
@@ -78,7 +78,7 @@ class StockAPI {
         //await credentialsFile.writeAsString(client.credentials.toJson());
         var r = map['price']; 
         print('$response');
-        print('here is r');
+        print('getprice_fin');
         print(r);
         return Future.value(double.parse(r));  
     }
@@ -86,7 +86,7 @@ class StockAPI {
     Future<Void> get_stock_info(var num) async {
         // Calling the top-level `clientCredentialsGrant` function will return a
         // [Client] instead.
-        print('sd');
+        print('info');
         print('$Client');
         var client = await oauth2.clientCredentialsGrant(
             authorizationEndpoint, identifier, secret, scopes: ['all']);
@@ -104,15 +104,42 @@ class StockAPI {
         // do not need to reauthenticate, and you can avoid saving the client identifier and
         // secret.
         //await credentialsFile.writeAsString(client.credentials.toJson());
-        this.price = map['price'];
-        this.stock_code = map['stock_code'];
+        this.price = double.parse(map['price']);
+        this.stock_code = num;
         this.name_en = map['name_en'];
-        this.chnage = map['change'];
-        this.change_pct = map['change_pct']; 
-        this.pe_ratio = map['price'];
-        this.turnover = map['price'];
-        print('$response');
-        print('here is r');
+        this.change = double.parse(map['change']);
+        this.change_pct = double.parse(map['change_pct']);
+        this.pe_ratio = double.parse(map['pe_ratio']);
+        this.turnover = int.parse(map['turnover']);
+        print('ss');
+        print('$price');
+        print('$stock_code');
+        print('$name_en');
+        print('$change');
+        print('$change_pct');
+        print('$pe_ratio');
+        print('$turnover');
         return null;
+    }
+    double get_price(){
+      return this.price;
+    }
+    double get_change(){
+      return this.change;
+    }
+    double get_change_pct(){
+      return this.change_pct;
+    }
+    double get_pe_ratio(){
+      return this.pe_ratio;
+    }
+    int get_turnover(){
+      return this.turnover;
+    }
+    int get_stock_code(){
+      return this.stock_code;
+    }
+    String get_name_en(){
+      return this.name_en;
     }
 }

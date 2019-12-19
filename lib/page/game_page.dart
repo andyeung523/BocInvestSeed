@@ -9,7 +9,6 @@ import 'package:invest_game/page/home.dart';
 import 'package:invest_game/page/tabs/my_pro.dart';
 import 'package:invest_game/page/tabs/personal_goal.dart';
 import 'package:invest_game/page/tabs/market.dart';
-import 'package:invest_game/page/tabs/news.dart';
 
 
 
@@ -82,19 +81,19 @@ class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin
           tabs: <Tab>[
             Tab(
               // set icon to the tab
-              icon: Icon(Icons.add_circle_outline),
+              icon: Icon(Icons.account_circle),
               text: "Portfolio",
             ),
             Tab(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.done_all),
               text: "Goal"
             ),
             Tab(
-              icon: Icon(Icons.trending_up),
+              icon: Icon(Icons.monetization_on),
               text: "Trading"
             ),
             Tab(
-              icon: Icon(Icons.trending_up),
+              icon: Icon(Icons.multiline_chart),
               text: "Market"
             )
           ],
