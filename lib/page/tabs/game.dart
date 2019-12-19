@@ -167,26 +167,26 @@ var _price;
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: TextFormField(
 
-                      decoration: InputDecoration(
-                          hintText: 'Please search',
-                          fillColor: Color.fromRGBO(255, 210, 213, 1),
-                          focusColor: Color.fromRGBO(159, 42, 51, 1),
-                          enabledBorder: UnderlineInputBorder(      
-                            borderSide: BorderSide(color: Color.fromRGBO(159, 42, 51, 1)),   
-                          ),  
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
-                          ),  
-                          filled: true,
-                          suffixIcon: IconButton(
-                              icon: Icon(Icons.search, color: Colors.black),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => Query()),
-                                );
-                              })),
-                    ),
+                             decoration: InputDecoration(
+                                 hintText: 'Please search',
+                                 fillColor: Color.fromRGBO(255, 210, 213, 1),
+                                 focusColor: Color.fromRGBO(159, 42, 51, 1),
+                                 enabledBorder: UnderlineInputBorder(      
+                                   borderSide: BorderSide(color: Color.fromRGBO(159, 42, 51, 1)),   
+                                 ),  
+                                 focusedBorder: UnderlineInputBorder(
+                                   borderSide: BorderSide(color: Colors.white),
+                                 ),  
+                                 filled: true,
+                                 suffixIcon: IconButton(
+                                     icon: Icon(Icons.search, color: Colors.black),
+                                     onPressed: () {
+                                       Navigator.push(
+                                         context,
+                                         MaterialPageRoute(builder: (context) => Query()),
+                                       );
+                                     })),
+                           ),
                     alignment: Alignment.centerLeft,
                   ),
                 ),
