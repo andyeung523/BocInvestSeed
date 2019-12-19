@@ -34,24 +34,23 @@ class _DreamHubState extends State<DreamHub> with SingleTickerProviderStateMixin
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(159, 42, 51,1),
         leading: IconButton(
           icon: Icon(Icons.home),
-          color: Colors.black,
+          color: Colors.white,
           onPressed: () {
             Navigator.of(context).pushReplacement(FadePageRoute(
             builder: (context) => Home(),
             ));
           },
-          
         ),
-        // Title
 
         title: Text(
           "Dream Hub",
-          style: TextStyle(color: Colors.black)
+          style: TextStyle(color: Colors.white)
         ),
         // Set the background color of the App Bar
-        backgroundColor: Colors.white,
+        
       ),
       body: TabBarView(
         // Add tabs as widgets
@@ -61,11 +60,13 @@ class _DreamHubState extends State<DreamHub> with SingleTickerProviderStateMixin
       ),
       // Set the bottom navigation bar
       bottomNavigationBar: Material(
+
         // set the color of the bottom navigation bar
-        color: Colors.white,
+        color: Color.fromRGBO(159, 42, 51,1),
         // set the tab bar as the child of bottom navigation bar
         child: TabBar(
-          labelColor: Colors.black,
+          indicatorColor: Colors.black,
+          labelColor: Colors.white,
 
           tabs: <Tab>[
             Tab(

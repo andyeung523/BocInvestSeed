@@ -3,7 +3,8 @@ import 'customIcons.dart';
 import 'data.dart';
 import 'dart:math';
 import 'dart:io';
-import 'package:oauth2/oauth2.dart' as oauth2;
+// import 'package:oauth2/oauth2.dart' as oauth2;
+import 'package:oauth2/oauth2.dart';
 import 'package:invest_game/model/login/stockAPI.dart';
 
 class Game extends StatefulWidget {
