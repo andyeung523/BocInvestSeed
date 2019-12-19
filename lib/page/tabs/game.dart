@@ -17,11 +17,19 @@ var widgetAspectRatio = cardAspectRatio * 1.2;
 
 class _GameState extends State<Game> {
 var currentPage = images.length - 1.0;
+var _price;
   //here
+  
   StockAPI api = new StockAPI();
+  @override
+  void initState(){
+    super.initState();
+    _price= 0.0;
+  }
   @override
   Widget build(BuildContext context) {
     PageController controller = PageController(initialPage: images.length - 1);
+
     controller.addListener(() {
       setState(() {
         currentPage = controller.page;
@@ -38,12 +46,15 @@ var currentPage = images.length - 1.0;
               FlatButton(
                         padding: EdgeInsets.all(12.0),
                         color: Color.fromRGBO(159, 42, 51, 1),
-                        onPressed: () {
+                        onPressed : () async {
                           print('object');
-                          api.getPrice();
+                          double p = await api.getPrice() ;
+                          setState(() {
+                            _price = p;
+                          });
                         }
-                          )
-              //Text('$r');           
+                          ),
+              Text('$_price'),           
             ],
             
           ),

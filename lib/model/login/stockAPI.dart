@@ -6,6 +6,7 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 import 'dart:io';
 import 'package:oauth2/oauth2.dart' as oauth2;
+import 'package:http/http.dart' as http;
 
 class StockAPI {
 
@@ -25,7 +26,7 @@ class StockAPI {
     // Either way, you must provide both a client identifier and a client secret:
     final identifier = "218d1356-d15b-491c-aba6-49ac9c888b01";
     final secret = "J0vU1yF1jX3hM2tH5sQ2rK3rM0fR1sP0rF5jF4yX1xV7yA1gJ8";
-    final credentialsFile = new File("~/.myapp/credentials.json"); 
+    final credentialsFile = new File("C:\Users\ycm\Developer\Flutter\BocHack\invest_game\lib\model\login\credentials.json"); 
     /// Either load an OAuth2 client from saved credentials or authenticate a new
     /// one.
     StockAPI();
@@ -41,26 +42,32 @@ class StockAPI {
             identifier: identifier, secret: secret);
       }
     }
-
-    Future<String> getPrice() async {
+    
+    Future<double> getPrice() async {
         // Calling the top-level `clientCredentialsGrant` function will return a
         // [Client] instead.
-        
+        print('sd');
+        print('$Client');
         var client = await oauth2.clientCredentialsGrant(
-            authorizationEndpoint, identifier, secret);
+            authorizationEndpoint, identifier, secret, scopes: ['all']);
+        //print('$response');
+
         // With an authenticated client, you can make requests, and the `Bearer` token
         // returned by the server during the client credentials grant will be attached
         // to any request you make.
-        var response = await client.read("https://api.au-syd.apiconnect.appdomain.cloud/bochk-fintech-dev/sb/api/investments/stock-price?stock_code=1'");
-        print('sssresponse');
+        var response = await client.read("https://api.au-syd.apiconnect.appdomain.cloud/bochk-fintech-dev/sb/api/investments/stock-price?stock_code=1");
+        print('$response');
+        
+        Map<String, dynamic> map = jsonDecode(response);
         // You can save the client's credentials, which consists of an access token, and
         // potentially a refresh token and expiry date, to a file. This way, subsequent runs
         // do not need to reauthenticate, and you can avoid saving the client identifier and
         // secret.
-        await credentialsFile.writeAsString(client.credentials.toJson());
-        var r = jsonDecode(response);
-
+        //await credentialsFile.writeAsString(client.credentials.toJson());
+        var r = map['price']; 
         print('$response');
-        return r;  
+        print('here is r');
+        print(r);
+        return Future.value(double.parse(r));  
     }
 }
