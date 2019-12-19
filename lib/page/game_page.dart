@@ -6,6 +6,10 @@ import 'tabs/game.dart';
 import 'package:invest_game/model/login/dashboard_screen.dart';
 import 'package:invest_game/model/login/custom_route.dart';
 import 'package:invest_game/page/home.dart';
+import 'package:invest_game/page/tabs/my_pro.dart';
+import 'package:invest_game/page/tabs/personal_goal.dart';
+import 'package:invest_game/page/tabs/market.dart';
+import 'package:invest_game/page/tabs/news.dart';
 
 
 
@@ -25,7 +29,7 @@ class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin
     final authorizationEndpoint =
     Uri.parse("http://example.com/oauth2/authorization");
     // Initialize the Tab Controller
-    controller = TabController(length: 3, vsync: this);
+    controller = TabController(length: 4, vsync: this);
     StockAPI api = new StockAPI();
     
   }
@@ -41,51 +45,58 @@ class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(159, 42, 51,1),
         leading: IconButton(
           icon: Icon(Icons.home),
-          color: Colors.black,
+          color: Colors.white,
           onPressed: () {
             Navigator.of(context).pushReplacement(FadePageRoute(
             builder: (context) => Home(),
             ));
           },
         ),
-        // Title
+        centerTitle: true,
         title: Text(
           "Investment Game",
-          style: TextStyle(color: Colors.black)
+          style: TextStyle(color: Colors.white)
         ),
         // Set the background color of the App Bar
-        backgroundColor: Colors.white,
+        
       ),
       body: TabBarView(
         // Add tabs as widgets
-        children: <Widget>[Game(), Search(), Top_idea()],
+        children: <Widget>[Mypro(), PersonalGoal(), Game(),Top_idea()],
         // set the controller
         controller: controller,
       ),
       // Set the bottom navigation bar
       bottomNavigationBar: Material(
+
         // set the color of the bottom navigation bar
-        color: Colors.white,
+        color: Color.fromRGBO(159, 42, 51,1),
         // set the tab bar as the child of bottom navigation bar
         child: TabBar(
-          labelColor: Colors.black,
+          indicatorColor: Colors.black,
+          labelColor: Colors.white,
 
           tabs: <Tab>[
             Tab(
               // set icon to the tab
               icon: Icon(Icons.add_circle_outline),
-              text: "Game",
+              text: "Portfolio",
             ),
             Tab(
               icon: Icon(Icons.search),
-              text: "Search"
+              text: "Goal"
             ),
             Tab(
               icon: Icon(Icons.trending_up),
-              text: "Top Idea"
+              text: "Trading"
             ),
+            Tab(
+              icon: Icon(Icons.trending_up),
+              text: "Market"
+            )
           ],
           // setup the controller
           controller: controller,
