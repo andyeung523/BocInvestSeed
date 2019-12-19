@@ -47,7 +47,7 @@ var _price;
                         color: Color.fromRGBO(159, 42, 51, 1),
                         onPressed : () async {
                           print('object');
-                          double p = await api.getPrice() ;
+                          double p = await api.getPrice(0001) ;
                           setState(() {
                             _price = p;
                           });

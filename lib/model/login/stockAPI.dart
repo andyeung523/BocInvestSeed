@@ -43,7 +43,7 @@ class StockAPI {
       }
     }
     
-    Future<double> getPrice() async {
+    Future<double> getPrice(var num) async {
         // Calling the top-level `clientCredentialsGrant` function will return a
         // [Client] instead.
         print('sd');
@@ -55,7 +55,7 @@ class StockAPI {
         // With an authenticated client, you can make requests, and the `Bearer` token
         // returned by the server during the client credentials grant will be attached
         // to any request you make.
-        var response = await client.read("https://api.au-syd.apiconnect.appdomain.cloud/bochk-fintech-dev/sb/api/investments/stock-price?stock_code=1");
+        var response = await client.read("https://api.au-syd.apiconnect.appdomain.cloud/bochk-fintech-dev/sb/api/investments/stock-price?stock_code=$num");
         print('$response');
         
         Map<String, dynamic> map = jsonDecode(response);
