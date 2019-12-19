@@ -58,7 +58,7 @@ var _price;
                     width: 100,
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Text('  Account'),
+                    child: Center(child: Text('Account')),
                     alignment: Alignment.centerLeft,
                   ),
                 ),
@@ -70,7 +70,7 @@ var _price;
                     width: 100,
                     padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
-                    child: Text('XXX Account'),
+                    child: Center(child: Text('XXX Account')),
                     alignment: Alignment.centerLeft,
                   ),
                 ),
@@ -85,7 +85,7 @@ var _price;
                     width: 100,
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Text('  Other Type'),
+                    child: Center(child: Text('Other Type')),
                     alignment: Alignment.centerLeft,
                   ),
                 ),
@@ -119,7 +119,7 @@ var _price;
                     width: 100,
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Text('  BuySell'),
+                    child: Center(child: Text('Buy/Sell')),
                     alignment: Alignment.centerLeft,
                   ),
                 ),
@@ -153,7 +153,7 @@ var _price;
                     width: 100,
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Text('  Stock Code'),
+                    child: Center(child: Text('Stock Code')),
                     alignment: Alignment.centerLeft,
                   ),
                 ),
@@ -192,7 +192,35 @@ var _price;
                 ),
               ],
             ),//copy here
-            
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 200,
+                    width: 100,
+                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Center(child: Text('Other Quantity')),
+                  ),
+                ),
+                
+                Expanded(
+                  flex: 6,
+                  child: Container(
+                    height: 200,
+                    width: 100,
+                    padding: EdgeInsets.all(30.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Row(
+                      children: <Widget>[
+                        
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
             ], 
           )  ),
       ),
