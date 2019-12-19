@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:invest_game/model/login/dashboard_screen.dart';
 import 'package:invest_game/model/login/custom_route.dart';
+import 'package:invest_game/page/chatbot_page.dart';
+import 'package:invest_game/page/game_page.dart';
+import 'package:invest_game/page/dreamhub.dart';
+
+import 'game_page.dart';
+
 
 
 class Home extends StatefulWidget {
@@ -44,7 +50,7 @@ class _HomeState extends State<Home> {
                         color: Color.fromRGBO(159, 42, 51, 1),
                         onPressed: () {
                           Navigator.of(context).pushReplacement(FadePageRoute(
-                            builder: (context) => Home(),
+                            builder: (context) => Gamepage(),
                           ));
                         },
                         child: Text(
@@ -63,7 +69,9 @@ class _HomeState extends State<Home> {
                         padding: EdgeInsets.all(12.0),
                         color: Color.fromRGBO(159, 42, 51, 1),
                         onPressed: () {
-                          /*...*/
+                          Navigator.of(context).pushReplacement(FadePageRoute(
+                            builder: (context) => Chatbot(),
+                          ));
                         },
                         child: Text(
                           'Chat Bot',
@@ -82,7 +90,9 @@ class _HomeState extends State<Home> {
                         padding: EdgeInsets.all(12.0),
                         color: Color.fromRGBO(159, 42, 51, 1),
                         onPressed: () {
-                          /*...*/
+                          Navigator.of(context).pushReplacement(FadePageRoute(
+                            builder: (context) => DreamHub(),
+                          ));
                         },
                         child: Text(
                           'Dream Hub',

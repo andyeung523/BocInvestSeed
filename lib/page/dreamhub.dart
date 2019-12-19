@@ -4,12 +4,12 @@ import 'package:invest_game/model/login/custom_route.dart';
 import 'package:invest_game/page/home.dart';
 
 
-class Gamepage extends StatefulWidget {
+class DreamHub extends StatefulWidget {
   @override
-  _GamepageState createState() => _GamepageState();
+  _DreamHubState createState() => _DreamHubState();
 }
 
-class _GamepageState extends State<Gamepage> {
+class _DreamHubState extends State<DreamHub> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +25,7 @@ class _GamepageState extends State<Gamepage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                     Image.asset( //Dream Hub
-                    'assets/inv_game.png', width: 100.0, height: 100.0,
+                    'assets/dream_hub.png', width: 100.0, height: 100.0,
                     ),
                     SizedBox(
                       width: 250,
