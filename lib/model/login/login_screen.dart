@@ -47,7 +47,7 @@ class LoginScreen extends StatelessWidget {
       titleTag: Constants.titleTag,
        messages: LoginMessages(
          usernameHint: 'Username',
-         passwordHint: 'Pass',
+         passwordHint: 'Password',
          confirmPasswordHint: 'Confirm',
          loginButton: 'LOG IN',
          signupButton: 'REGISTER',
