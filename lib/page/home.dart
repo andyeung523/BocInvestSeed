@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:invest_game/model/login/dashboard_screen.dart';
+import 'package:invest_game/model/login/custom_route.dart';
+
 
 class Home extends StatefulWidget {
   @override
@@ -21,7 +23,7 @@ class _HomeState extends State<Home> {
                 mainAxisSize: MainAxisSize.max, 
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Image.asset(//Logo
+                  Image.asset(//Logo  
                     'assets/logo.png', width: 200.0, height: 100.0,
                   ),
                   Container(
@@ -41,7 +43,9 @@ class _HomeState extends State<Home> {
                         padding: EdgeInsets.all(12.0),
                         color: Color.fromRGBO(159, 42, 51, 1),
                         onPressed: () {
-                          /*...*/
+                          Navigator.of(context).pushReplacement(FadePageRoute(
+                            builder: (context) => Home(),
+                          ));
                         },
                         child: Text(
                           'Invesment Game',
