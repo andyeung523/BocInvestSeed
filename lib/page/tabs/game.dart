@@ -56,7 +56,7 @@ var _price;
                   flex: 2,
                   child: Container(
                     height: 100,
-                    width: 100,
+                    margin: EdgeInsets.all(1.0),
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
                     child: Center(child: Text('Account')),
@@ -68,8 +68,9 @@ var _price;
                   flex: 6,
                   child: Container(
                     height: 100,
-                    width: 100,
-                    padding: EdgeInsets.all(30.0),
+                    margin: EdgeInsets.all(1.0),
+
+                    // padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: Center(child: Text('XXX Account')),
                     alignment: Alignment.centerLeft,
@@ -83,7 +84,8 @@ var _price;
                   flex: 2,
                   child: Container(
                     height: 100,
-                    width: 100,
+                    margin: EdgeInsets.all(1.0),
+
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
                     child: Center(child: Text('Other Type')),
@@ -95,8 +97,10 @@ var _price;
                   flex: 6,
                   child: Container(
                     height: 100,
-                    width: 100,
-                    padding: EdgeInsets.all(30.0),
+                    
+
+                    margin: EdgeInsets.all(1.0),
+                    padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: Row(
                       children: <Widget>[
@@ -116,8 +120,8 @@ var _price;
                 Expanded(
                   flex: 2,
                   child: Container(
+                    margin: EdgeInsets.all(1.0),
                     height: 100,
-                    width: 100,
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
                     child: Center(child: Text('Buy/Sell')),
@@ -129,8 +133,8 @@ var _price;
                   flex: 6,
                   child: Container(
                     height: 100,
-                    width: 100,
-                    padding: EdgeInsets.all(30.0),
+                    margin: EdgeInsets.all(1.0),
+                    // padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: Row(
                       children: <Widget>[
@@ -151,7 +155,7 @@ var _price;
                   flex: 2,
                   child: Container(
                     height: 100,
-                    width: 100,
+                    margin: EdgeInsets.all(1.0),
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
                     child: Center(child: Text('Stock Code')),
@@ -162,8 +166,8 @@ var _price;
                 Expanded(
                   flex: 6,
                   child: Container(
+                    margin: EdgeInsets.all(1.0),
                     height: 100,
-                    width: 100,
                     padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: TextFormField(
@@ -197,11 +201,11 @@ var _price;
                 Expanded(
                   flex: 2,
                   child: Container(
+                    margin: EdgeInsets.all(1.0),
                     height: 100,
-                    width: 100,
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Center(child: Text('Other Quantity')),
+                    child: Center(child: Text('Other \nQuantity')),
                   ),
                 ),
                 
@@ -209,7 +213,7 @@ var _price;
                   flex: 6,
                   child: Container(
                     height: 100,
-                    width: 100,
+                    margin: EdgeInsets.all(1.0),
                     padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: TextFormField(
@@ -236,8 +240,8 @@ var _price;
                 Expanded(
                   flex: 2,
                   child: Container(
+                    margin: EdgeInsets.all(1.0),
                     height: 100,
-                    width: 100,
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
                     child: Center(child: Text('Other Price')),
@@ -247,8 +251,8 @@ var _price;
                 Expanded(
                   flex: 6,
                   child: Container(
+                    margin: EdgeInsets.all(1.0),
                     height: 100,
-                    width: 100,
                     padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: TextFormField(
@@ -272,37 +276,29 @@ var _price;
             ),
             Row(
               children: <Widget>[
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    height: 100,
-                    width: 100,
-                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
-                    color: Color.fromRGBO(240, 240, 240, 1),
-                    
-                  ),
-                ),
                 
                 Expanded(
                   flex: 6,
                   child: Container(
-                    height: 200,
+                    height: 150,
                     width: 100,
                     padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
-                    child: FlatButton(
-                        padding: EdgeInsets.all(12.0),
-                        color: Color.fromRGBO(159, 42, 51, 1),
-                        onPressed: () {
-                          Navigator.of(context).pushReplacement(FadePageRoute(
-                            builder: (context) => Mypro(),
-                          ));
-                        },
-                        child: Text(
-                          'Submit',
-                          style: TextStyle(fontSize: 20.0,color: Colors.white),
+                    child: Center(
+                      child: FlatButton(
+                          padding: EdgeInsets.all(12.0),
+                          color: Color.fromRGBO(159, 42, 51, 1),
+                          onPressed: () {
+                            Navigator.of(context).pushReplacement(FadePageRoute(
+                              builder: (context) => Mypro(),
+                            ));
+                          },
+                          child: Text(
+                            'Submit',
+                            style: TextStyle(fontSize: 20.0,color: Colors.white),
+                          ),
                         ),
-                      ),
+                    ),
                     alignment: Alignment.topRight,
                   ),
                 ),
