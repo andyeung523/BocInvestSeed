@@ -167,7 +167,72 @@ var _price;
                 ),
               ],
             ),
-              
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 6,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Center(child: Text('Total Balance')),
+                  ),
+                  ),
+                ),
+                
+                Expanded(
+                  
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Center(child: Text('\$100,000')),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 6,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Center(child: Text('Circulating Cash')),
+                  ),
+                  ),
+                ),
+                
+                Expanded(
+                  
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Center(child: Text('\$86925')),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  ),
+                ),
+              ],
+            ),
             ],
             
           ),

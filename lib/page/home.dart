@@ -18,7 +18,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
+        body: SingleChildScrollView(
+          child: SafeArea(
         child:
           Center(
             child: Container(
@@ -105,6 +106,7 @@ class _HomeState extends State<Home> {
             ),
           )
       )
+        )
     );
     //return MaterialApp(
     //  title: 'Dashboard',
