@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:invest_game/model/login/stockAPI.dart';
+import 'package:invest_game/page/tabs/knowlege.dart';
 import 'tabs/top_idea.dart';
 import 'tabs/search.dart';
 import 'tabs/game.dart';
@@ -28,9 +29,8 @@ class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin
     final authorizationEndpoint =
     Uri.parse("http://example.com/oauth2/authorization");
     // Initialize the Tab Controller
-    controller = TabController(length: 4, vsync: this);
+    controller = TabController(length: 5, vsync: this);
     StockAPI api = new StockAPI();
-    
   }
 
   @override
@@ -56,7 +56,7 @@ class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin
         ),
         centerTitle: true,
         title: Text(
-          "Investment Game",
+          "InvestSeed Virtual Trading",
           style: TextStyle(color: Colors.white)
         ),
         // Set the background color of the App Bar
@@ -64,7 +64,7 @@ class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin
       ),
       body: TabBarView(
         // Add tabs as widgets
-        children: <Widget>[Mypro(), PersonalGoal(), Game(),Top_idea()],
+        children: <Widget>[Mypro(), PersonalGoal(), Game(),Top_idea(), Knowledge()],
         // set the controller
         controller: controller,
       ),
@@ -82,7 +82,7 @@ class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin
             Tab(
               // set icon to the tab
               icon: Icon(Icons.account_circle),
-              text: "Portfolio",
+              text: "Me",
             ),
             Tab(
               icon: Icon(Icons.done_all),
@@ -95,6 +95,10 @@ class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin
             Tab(
               icon: Icon(Icons.multiline_chart),
               text: "Market"
+            ),
+            Tab(
+              icon: Icon(Icons.library_books),
+              text: "Tips"
             )
           ],
           // setup the controller
