@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:invest_game/page/game_page_2.dart';
 import 'package:invest_game/page/tabs/my_pro.dart';
+import '../home.dart';
+import 'customIcons.dart';
 import 'data.dart';
 import 'dart:math';
+import 'dart:io';
 import 'package:invest_game/model/login/custom_route.dart';
+// import 'package:oauth2/oauth2.dart' as oauth2;
+import 'package:oauth2/oauth2.dart';
 import 'package:invest_game/model/login/stockAPI.dart';
 import 'package:invest_game/page/tabs/query.dart';
 
@@ -103,7 +108,7 @@ var _price;
 
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Center(child: Text('Other Type')),
+                    child: Center(child: Text('Order Type')),
                     alignment: Alignment.centerLeft,
                   ),
                 ),
@@ -232,7 +237,7 @@ var _price;
                     height: 100,
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Center(child: Text('Other \nQuantity')),
+                    child: Center(child: Text('Order \nQuantity')),
                   ),
                 ),
                 
@@ -271,7 +276,7 @@ var _price;
                     height: 100,
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Center(child: Text('Other Price')),
+                    child: Center(child: Text('Order Price')),
                   ),
                 ),
                 

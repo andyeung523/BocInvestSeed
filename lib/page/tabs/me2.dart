@@ -213,6 +213,8 @@ var _price;
             ),
             Row(
               children: <Widget>[
+                Container(
+                ),
                 Expanded(
                   flex: 1,
                   child: ClipRRect(
@@ -221,15 +223,172 @@ var _price;
                     height: 45.0,
                     margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                     padding: EdgeInsets.all(15.0),
-                    color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Center(child: Text('0001')),
+                    
+
+                    //here
+                    child: Text('What you hold'),
                   ),
                   ),
                 ),
                 
               ],
             ),
-              
+            Row(
+              children: <Widget>[
+                Container(
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('NO.',style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 0.7)),
+                  ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('Name', style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 0.7)),
+                  ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('Hold#',style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 0.7)),
+                  ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('\$HK',style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 0.7)),
+                  ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('AVG\$',style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 0.7)),
+                  ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('Profit',style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 0.7)),
+                  ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Container(
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('00001'),
+                  ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('Stock Name'),
+                  ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('CKH HODINGS'),
+                  ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('71.75'),
+                  ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('70.26'),
+                  ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 45.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),      
+                    child: Text('xxx'),
+                  ),
+                  ),
+                ),
+              ],
+            ),
             ],
             
           ),
