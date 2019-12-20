@@ -18,7 +18,10 @@ class Game extends StatefulWidget {
 
 var cardAspectRatio = 12.0 / 16.0;
 var widgetAspectRatio = cardAspectRatio * 1.2;
-
+int _groupValue = 1;
+int _groupValue1 = 1;
+int selectedRadio;
+int selectedRadio1;
 class _GameState extends State<Game> {
 var currentPage = images.length - 1.0;
 var _price;
@@ -29,6 +32,16 @@ var _price;
   void initState(){
     super.initState();
     _price= 0.0;
+  }
+  setSelectRadio(int val){
+    setState(() {
+      selectedRadio =val;
+    });
+  }
+  setSelectRadio1(int val){
+    setState(() {
+      selectedRadio1 =val;
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -72,7 +85,7 @@ var _price;
 
                     // padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
-                    child: Center(child: Text('XXX Account')),
+                    child: Center(child: Text('May\'s Account')),
                     alignment: Alignment.centerLeft,
                   ),
                 ),
@@ -104,9 +117,15 @@ var _price;
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: Row(
                       children: <Widget>[
-                        Radio(),
+                        Radio(value: 1,
+                          groupValue: selectedRadio1,
+                          activeColor: Color.fromRGBO(159, 42, 51, 1),
+                          onChanged: (val) {setSelectRadio1(val);},),
                         Text('Limit Order'),
-                        Radio(),
+                        Radio(value: 2,
+                          groupValue: selectedRadio1,
+                          activeColor: Color.fromRGBO(159, 42, 51, 1),
+                          onChanged: (val) {setSelectRadio1(val);},),
                         Text('Market Order')
                       ],
                     ),
@@ -138,9 +157,15 @@ var _price;
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: Row(
                       children: <Widget>[
-                        Radio(),
+                        Radio(value: 1,
+                          groupValue: selectedRadio,
+                          activeColor: Color.fromRGBO(159, 42, 51, 1),
+                          onChanged: (val) {setSelectRadio(val);},),
                         Text('Buy'),
-                        Radio(),
+                        Radio(value: 2,
+                          groupValue: selectedRadio,
+                          activeColor: Color.fromRGBO(159, 42, 51, 1),
+                          onChanged: (val) {setSelectRadio(val);},),
                         Text('Sell')
                       ],
                     ),

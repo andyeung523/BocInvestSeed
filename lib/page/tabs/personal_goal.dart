@@ -332,7 +332,7 @@ class _PersonalGoalState extends State<PersonalGoal> {
                     padding: EdgeInsets.all(15.0),
                     color: Colors.transparent,
                     child: FittedBox(
-                      child: Image.asset('assets/scrolling_4_chart.png'),
+                      child: Image.asset('assets/Scrolling_4_Chart.png'),
                       fit: BoxFit.fill,
                     ),   
                     
