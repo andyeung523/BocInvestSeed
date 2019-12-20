@@ -64,7 +64,7 @@ class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin
       ),
       body: TabBarView(
         // Add tabs as widgets
-        children: <Widget>[Mypro(), PersonalGoal(), Game(),Top_idea(), Knowledge()],
+        children: <Widget>[Mypro(), PersonalGoal(), Game(),Market(), Knowledge()],
         // set the controller
         controller: controller,
       ),
@@ -75,7 +75,7 @@ class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin
         color: Color.fromRGBO(159, 42, 51,1),
         // set the tab bar as the child of bottom navigation bar
         child: TabBar(
-          indicatorColor: Colors.black,
+          indicatorColor: Colors.red[900],
           labelColor: Colors.white,
 
           tabs: <Tab>[
