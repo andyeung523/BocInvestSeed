@@ -249,6 +249,7 @@ var _price;
                     padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: TextFormField(
+                      
                            decoration: InputDecoration(
                                hintText: 'Input here',
                                fillColor: Color.fromRGBO(255, 210, 213, 1),

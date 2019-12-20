@@ -24,25 +24,51 @@ class _KnowlegeState extends State<Knowledge> {
     return Container(
       child: SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.white,
           body: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: Container(
-                              height: 150,
-                              color: Colors.black,
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.all(20),
+                    padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                    child: Column(  
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Container(
+                                height: 150,
+                                child: Text("Tips",style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 3.5)),
+                                //color: Colors.black,
+                              ),
                             ),
-                          )
-                        ],
-                      )
-                    ],
+                            Expanded(
+                              child: Container(
+                                height: 200,
+                                child: CircleAvatar(
+                                          backgroundImage: AssetImage('assets/rocket.JPG'),
+                                        )
+                                //color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Container(
+                                height: 100,
+                                child: Text("You\'re on mpdule 1 of 10",style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1)),
+                                //color: Colors.black,
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                    //color: colours,
                   ),
-                  //color: colours,
                 )
               ],
             ),
