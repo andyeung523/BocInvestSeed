@@ -63,6 +63,12 @@ var _price;
           child:Column(
             //padding: EdgeInsets.only(top: 12),
             children :<Widget>[
+              FittedBox(
+                
+                child: Image.asset('assets/trading.png'),
+                fit: BoxFit.fill,
+              ),   
+              SizedBox(height: 2.0,),
               Row(
               children: <Widget>[
                 Expanded(
@@ -153,7 +159,7 @@ var _price;
                   child: Container(
                     height: 100,
                     margin: EdgeInsets.all(1.0),
-                    // padding: EdgeInsets.all(30.0),
+                    padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: Row(
                       children: <Widget>[

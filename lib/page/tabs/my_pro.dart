@@ -44,14 +44,10 @@ var _price;
           child: Column(
             children: <Widget>[
 
-              Container(
-                //color: Color.fromRGBO(50, 230, 221, 1),
-                height: 80,
-                width: double.maxFinite,
-                child: Text('My Investment Portfolio',style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1.5),),
-                alignment: Alignment.center,
-                
-              ),
+              FittedBox(
+                      child: Image.asset('assets/account.jpg'),
+                      fit: BoxFit.fill,
+              ),   
               
               Container(
                 color: Color.fromRGBO(50, 230, 221, 1),
