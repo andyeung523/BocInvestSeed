@@ -14,17 +14,23 @@ import 'package:invest_game/page/tabs/query.dart';
 
 class Knowledge extends StatefulWidget {
   @override
-  _KnowledgeState createState() => _KnowledgeState();
+  _KnowlegeState createState() => _KnowlegeState();
 }
 
-class _KnowledgeState extends State<Knowledge> {
+class _KnowlegeState extends State<Knowledge> {
   @override
   Widget build(BuildContext context) {
     return Container(
       child: SafeArea(
         child: Scaffold(
           body: SingleChildScrollView(
-            child: Text('knowladge'),
+            child: Column(
+              children: <Widget>[
+                Container(
+                  //color: colours,
+                )
+              ],
+            ),
           ),
         ),
       ),

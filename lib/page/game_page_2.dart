@@ -7,19 +7,19 @@ import 'tabs/game.dart';
 import 'package:invest_game/model/login/dashboard_screen.dart';
 import 'package:invest_game/model/login/custom_route.dart';
 import 'package:invest_game/page/home.dart';
-import 'package:invest_game/page/tabs/my_pro.dart';
+import 'package:invest_game/page/tabs/me2.dart';
 import 'package:invest_game/page/tabs/personal_goal.dart';
 import 'package:invest_game/page/tabs/knowlege.dart';
 import 'package:invest_game/page/tabs/market.dart';
 
 
 
-class Gamepage extends StatefulWidget {
+class Gamepage2 extends StatefulWidget {
   @override
-  _GamepageState createState() => _GamepageState();
+  _Gamepage2State createState() => _Gamepage2State();
 }
 
-class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin {
+class _Gamepage2State extends State<Gamepage2> with SingleTickerProviderStateMixin {
   // Create a tab controller
   TabController controller;
 
@@ -65,7 +65,7 @@ class _GamepageState extends State<Gamepage> with SingleTickerProviderStateMixin
       ),
       body: TabBarView(
         // Add tabs as widgets
-        children: <Widget>[Mypro(), PersonalGoal(), Game(),Top_idea(), Knowledge()],
+        children: <Widget>[Me2(), PersonalGoal(), Game(),Top_idea(), Knowledge()],
         // set the controller
         controller: controller,
       ),

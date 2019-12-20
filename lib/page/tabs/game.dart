@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invest_game/page/game_page_2.dart';
 import 'package:invest_game/page/tabs/my_pro.dart';
 import '../home.dart';
 import 'customIcons.dart';
@@ -321,7 +322,7 @@ var _price;
                           color: Color.fromRGBO(159, 42, 51, 1),
                           onPressed: () {
                             Navigator.of(context).pushReplacement(FadePageRoute(
-                              builder: (context) => Mypro(),
+                              builder: (context) => Gamepage2(),
                             ));
                           },
                           child: Text(
