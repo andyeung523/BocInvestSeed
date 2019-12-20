@@ -20,6 +20,7 @@ class Knowledge extends StatefulWidget {
 class _KnowlegeState extends State<Knowledge> {
   @override
   Widget build(BuildContext context) {
+    
     return Container(
       child: SafeArea(
         child: Scaffold(
@@ -27,6 +28,20 @@ class _KnowlegeState extends State<Knowledge> {
             child: Column(
               children: <Widget>[
                 Container(
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: Container(
+                              height: 150,
+                              color: Colors.black,
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                   //color: colours,
                 )
               ],
