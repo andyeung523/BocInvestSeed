@@ -103,7 +103,7 @@ Row(
                             Text('0001.HK',
                             style: TextStyle( fontSize: 20.0),),
                             Text('CK Hutchision Holdings Limited',
-                            style: TextStyle( fontSize: 12.0),),
+                            style: TextStyle( fontSize: 15.0),),
                           ],
                         ),
                         ),
@@ -280,7 +280,7 @@ Row(
                 ),
               ],
             ),
-            Row(
+                        Row(
               
               children: <Widget>[
                 Expanded(
@@ -292,13 +292,34 @@ Row(
                     margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                     padding: EdgeInsets.all(15.0),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Text('How many years of investment experience do you have?'),
+                    child: Row(
+                      children: <Widget>[
+                        Expanded( flex: 4,child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text('0016.HK',
+                            style: TextStyle( fontSize: 20.0),),
+                            Text('SHK PPT',
+                            style: TextStyle( fontSize: 18.0),),
+                          ],
+                        ),
+                        ),
+                        Expanded( flex: 2,child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Text('118.00',textAlign: TextAlign.right,
+                            style: TextStyle(fontSize: 30.0),),
+                          ],
+                        ),
+                        ),
+                      ],
+                    ),
                   ),
                   ),
                 ),
               ],
             ),
-            Row(
+                        Row(
               
               children: <Widget>[
                 Expanded(
@@ -310,7 +331,28 @@ Row(
                     margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                     padding: EdgeInsets.all(15.0),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Text('How many years of investment experience do you have?'),
+                    child: Row(
+                      children: <Widget>[
+                        Expanded( flex: 4,child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text('0267.HK',
+                            style: TextStyle( fontSize: 20.0),),
+                            Text('CITIC Limited',
+                            style: TextStyle( fontSize: 18.0),),
+                          ],
+                        ),
+                        ),
+                        Expanded( flex: 2,child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Text('10.30',textAlign: TextAlign.right,
+                            style: TextStyle(fontSize: 30.0),),
+                          ],
+                        ),
+                        ),
+                      ],
+                    ),
                   ),
                   ),
                 ),

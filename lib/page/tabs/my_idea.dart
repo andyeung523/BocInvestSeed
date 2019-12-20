@@ -176,14 +176,16 @@ class CardScrollWidget extends StatelessWidget {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
                                       children: const<Widget>[
-                                      Text("17.1+ ",
-                                        style: TextStyle(color: Colors.white)),
-                                      SizedBox(width: 5.0,),
+                                      
+                                      
                                       Icon(
                                         Icons.thumb_up,
                                         color: Colors.white,
                                         size: 17.0,
                                       ),
+                                      SizedBox(width: 5.0,),
+                                      Text("11k + ",
+                                        style: TextStyle(color: Colors.white)),
                                     ],)
 
                                     

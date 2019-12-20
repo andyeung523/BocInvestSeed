@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
                   Container(
                     padding: EdgeInsets.fromLTRB(8, 30, 8, 30),
                     child: Text(
-                      'Begin Your Investment Journey!',
+                      'Begin Your Journey!',
                       style: TextStyle(fontStyle: FontStyle.italic, color: Colors.grey[800], fontSize: 20),
                       ),
                   ),
@@ -56,6 +56,7 @@ class _HomeState extends State<Home> {
                           'Invesment Game',
                           style: TextStyle(fontSize: 20.0,color: Colors.white),
                         ),
+                        
                       ),
                     ),
                     Image.asset( //Chat Bot
@@ -73,7 +74,7 @@ class _HomeState extends State<Home> {
                           ));
                         },
                         child: Text(
-                          'Chat Bot',
+                          'Chatbot',
                           style: TextStyle(fontSize: 20.0,color: Colors.white),
                         ),
                       ),
