@@ -22,7 +22,7 @@ class _SearchState extends State<Search> {
                 color: Colors.white,
               ),
               Text(
-                "First Tab",
+                "Coming Soon...",
                 style: TextStyle(color: Colors.white),
               )
             ],

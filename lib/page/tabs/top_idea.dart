@@ -22,7 +22,7 @@ class _Top_ideaState extends State<Top_idea> {
                 color: Colors.white,
               ),
               Text(
-                "First Tab",
+                "Coming Soon...",
                 style: TextStyle(color: Colors.white),
               )
             ],

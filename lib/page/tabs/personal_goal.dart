@@ -12,147 +12,343 @@ class PersonalGoal extends StatefulWidget {
   _PersonalGoalState createState() => _PersonalGoalState();
 }
 
-var cardAspectRatio = 12.0 / 16.0;
-var widgetAspectRatio = cardAspectRatio * 1.2;
-
 class _PersonalGoalState extends State<PersonalGoal> {
-var currentPage = images.length - 1.0;
-var _price;
-  //here
-  
-  StockAPI api = new StockAPI();
-  @override
-  void initState(){
-    super.initState();
-    _price= 0.0;
-  }
   @override
   Widget build(BuildContext context) {
-    PageController controller = PageController(initialPage: images.length - 1);
+    return SingleChildScrollView(
+ 
+          child:Column(
+            //padding: EdgeInsets.only(top: 12),
+            children :<Widget>[
+               FittedBox(
+                      child: Image.asset('assets/goal.png'),
+                      fit: BoxFit.fill,
+              ),   
 
-    controller.addListener(() {
-      setState(() {
-        currentPage = controller.page;
-      });
-    });
-
-    return Container(
-      
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Text('PersonalGoal'),           
-            ],
-            
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CardScrollWidget extends StatelessWidget {
-  var currentPage;
-  var padding = 20.0;
-  var verticalInset = 20.0;
-
-  CardScrollWidget(this.currentPage);
-
-  @override
-  Widget build(BuildContext context) {
-    return new AspectRatio(
-      aspectRatio: widgetAspectRatio,
-      child: LayoutBuilder(builder: (context, contraints) {
-        var width = contraints.maxWidth;
-        var height = contraints.maxHeight;
-
-        var safeWidth = width - 2 * padding;
-        var safeHeight = height - 2 * padding;
-
-        var heightOfPrimaryCard = safeHeight;
-        var widthOfPrimaryCard = heightOfPrimaryCard * cardAspectRatio;
-
-        var primaryCardLeft = safeWidth - widthOfPrimaryCard;
-        var horizontalInset = primaryCardLeft / 2;
-
-        List<Widget> cardList = new List();
-
-        for (var i = 0; i < images.length; i++) {
-          var delta = i - currentPage;
-          bool isOnRight = delta > 0;
-
-          var start = padding +
-              max(
-                  primaryCardLeft -
-                      horizontalInset * -delta * (isOnRight ? 15 : 1),
-                  0.0);
-
-          var cardItem = Positioned.directional(
-            top: padding + verticalInset * max(-delta, 0.0),
-            bottom: padding + verticalInset * max(-delta, 0.0),
-            start: start,
-            textDirection: TextDirection.rtl,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(16.0),
-              child: Container(
-                decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                  BoxShadow(
-                      color: Colors.black12,
-                      offset: Offset(3.0, 6.0),
-                      blurRadius: 10.0)
-                ]),
-                child: AspectRatio(
-                  aspectRatio: cardAspectRatio,
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: <Widget>[
-                      Image.asset(images[i], fit: BoxFit.cover),
-                      Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 16.0, vertical: 8.0),
-                              child: Text(title[i],
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25.0,
-                                      fontFamily: "SF-Pro-Text-Regular")),
-                            ),
-                            
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 12.0, bottom: 12.0),
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 22.0, vertical: 6.0),
-                                decoration: BoxDecoration(
-                                    color: Colors.blueAccent,
-                                    borderRadius: BorderRadius.circular(20.0)),
-                                child: Text("Read Later",
-                                    style: TextStyle(color: Colors.white)),
-                              ),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
+              Row(
+              
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('How many years of investment experience do you have?'),
+                  ),
                   ),
                 ),
-              ),
+                
+                Expanded(
+                  
+                  flex: 2,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Text('A. One to three years'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  ),
+                ),
+              ],
             ),
-          );
-          cardList.add(cardItem);
-        }
-        return Stack(
-          children: cardList,
-        );
-      }),
+
+            Row(
+              
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('What kind of investment product(s) are you interested in?')
+                  ),
+                  ),
+                ),
+                
+                Expanded(
+                  
+                  flex: 2,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Text('B. Foreign Stock'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  ),
+                ),
+              ],
+            ),
+
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('What kind of investments product(s) have you ever invested in?'),
+                  ),
+                  ),
+                ),
+                
+                Expanded(
+                  
+                  flex: 2,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Text('A. Hong Kong Stock'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  ),
+                ),
+              ],
+            ),
+
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('Which type of channel(s) do you usually rely on when investing?'),
+                  ),
+                  ),
+                ),
+                
+                Expanded(
+                  
+                  flex: 2,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Text('C. Bokers'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  ),
+                ),
+              ],
+            ),
+
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('I always have planning before making decision.'),
+                  ),
+                  ),
+                ),
+                
+                Expanded(
+                  
+                  flex: 2,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Text('A. Yes'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  ),
+                ),
+              ],
+            ),
+            
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 85.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('What percentage of your net asset value do you want your invest to take?'),
+                  ),
+                  ),
+                ),
+                
+                Expanded(
+                  
+                  flex: 2,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 85.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Text('A. Less than 25%'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  ),
+                ),
+              ],
+            ),
+            
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('Do you have a regular saving habit?'),
+                  ),
+                  ),
+                ),
+                
+                Expanded(
+                  
+                  flex: 2,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 75.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Text('B. No'),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  ),
+                ),
+              ],
+            ),
+
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 130.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Text('What is(are) your saving goals?'),
+                  ),
+                  ),
+                ),
+                
+                Expanded(
+                  
+                  flex: 2,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 130.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: Text('A. A Trip to Europe, \nB. Buy a Residential Flat, \nC. Retirement Plan',
+                    style: TextStyle(fontSize: 13.0),),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  ),
+                ),
+              ],
+            ),
+            
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    height: 150.0,
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Colors.grey[300],
+                    child: Text('Personalized Result:\n- You are a CONSERVATIVE INVESTOR. \n- The following types of investment products suit you:\nSTOCKS IN MAIN BOARD',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                  ),
+                  ),
+                ),
+              
+              ],
+            ),
+
+             Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                  child: new Container(
+                    
+                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    padding: EdgeInsets.all(15.0),
+                    color: Colors.transparent,
+                    child: FittedBox(
+                      child: Image.asset('assets/Scrolling_4_Chart.png'),
+                      fit: BoxFit.fill,
+                    ),   
+                    
+                  ),
+                  ),
+                ),
+              
+              ],
+            ),
+
+            ],
+      ),
+
+    
+
+      
     );
   }
 }
