@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invest_game/page/tabs/my_pro.dart';
 import '../home.dart';
 import 'customIcons.dart';
 import 'data.dart';
@@ -166,7 +167,6 @@ var _price;
                     padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
                     child: TextFormField(
-
                            decoration: InputDecoration(
                                hintText: 'Please search',
                                fillColor: Color.fromRGBO(255, 210, 213, 1),
@@ -197,7 +197,7 @@ var _price;
                 Expanded(
                   flex: 2,
                   child: Container(
-                    height: 200,
+                    height: 100,
                     width: 100,
                     //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
                     color: Color.fromRGBO(255, 210, 213, 1),
@@ -208,15 +208,102 @@ var _price;
                 Expanded(
                   flex: 6,
                   child: Container(
+                    height: 100,
+                    width: 100,
+                    padding: EdgeInsets.all(30.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: TextFormField(
+                           decoration: InputDecoration(
+                               hintText: 'Input here',
+                               fillColor: Color.fromRGBO(255, 210, 213, 1),
+                               focusColor: Color.fromRGBO(159, 42, 51, 1),
+                               enabledBorder: UnderlineInputBorder(      
+                                 borderSide: BorderSide(color: Color.fromRGBO(159, 42, 51, 1)),   
+                               ),  
+                               focusedBorder: UnderlineInputBorder(
+                                 borderSide: BorderSide(color: Colors.white),
+                               ),  
+                               filled: true,
+                               ),
+                         ),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
+                    color: Color.fromRGBO(255, 210, 213, 1),
+                    child: Center(child: Text('Other Price')),
+                  ),
+                ),
+                
+                Expanded(
+                  flex: 6,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    padding: EdgeInsets.all(30.0),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    child: TextFormField(
+                           decoration: InputDecoration(
+                               hintText: 'Input here',
+                               fillColor: Color.fromRGBO(255, 210, 213, 1),
+                               focusColor: Color.fromRGBO(159, 42, 51, 1),
+                               enabledBorder: UnderlineInputBorder(      
+                                 borderSide: BorderSide(color: Color.fromRGBO(159, 42, 51, 1)),   
+                               ),  
+                               focusedBorder: UnderlineInputBorder(
+                                 borderSide: BorderSide(color: Colors.white),
+                               ),  
+                               filled: true,
+                               ),
+                         ),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
+                    color: Color.fromRGBO(240, 240, 240, 1),
+                    
+                  ),
+                ),
+                
+                Expanded(
+                  flex: 6,
+                  child: Container(
                     height: 200,
                     width: 100,
                     padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(240, 240, 240, 1),
-                    child: Row(
-                      children: <Widget>[
-                        
-                      ],
-                    ),
+                    child: FlatButton(
+                        padding: EdgeInsets.all(12.0),
+                        color: Color.fromRGBO(159, 42, 51, 1),
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(FadePageRoute(
+                            builder: (context) => Mypro(),
+                          ));
+                        },
+                        child: Text(
+                          'Submit',
+                          style: TextStyle(fontSize: 20.0,color: Colors.white),
+                        ),
+                      ),
+                    alignment: Alignment.topRight,
                   ),
                 ),
               ],
