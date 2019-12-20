@@ -48,133 +48,6 @@ var _price;
                       child: Image.asset('assets/account.jpg'),
                       fit: BoxFit.fill,
               ),   
-              
-              Container(
-                //color: Color.fromRGBO(50, 230, 221, 1),
-                height: 350,
-                width: double.maxFinite,
-                child: Image.asset('assets/investment_distribution.png'),
-                alignment: Alignment.center,
-                
-              ),Row(
-              children: <Widget>[
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    height: 45,
-                    margin: EdgeInsets.all(1.0),
-                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
-                    color: Color.fromRGBO(251, 151, 39, 1),
-                    child: Center(child: Text('Paid Interest', style:TextStyle(color: Colors.white ))),
-                    alignment: Alignment.centerLeft,
-                  ),
-                ),
-                
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    height: 45,
-                    margin: EdgeInsets.all(1.0),
-
-                    // padding: EdgeInsets.all(30.0),
-                    color: Color.fromRGBO(251, 151, 39, 1),
-                    child: Center(child: Text('\$0', style:TextStyle(color: Colors.white ))),
-                    alignment: Alignment.centerLeft,
-                  ),
-                ),
-              ],
-            ),//copy here
-            Row(
-              children: <Widget>[
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    height: 45,
-                    margin: EdgeInsets.all(1.0),
-                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
-                    color: Color.fromRGBO(251, 151, 39, 1),
-                    child: Center(child: Text('Total Market Price', style:TextStyle(color: Colors.white ))),
-                    alignment: Alignment.centerLeft,
-                  ),
-                ),
-                
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    height: 45,
-                    margin: EdgeInsets.all(1.0),
-
-                    // padding: EdgeInsets.all(30.0),
-                    color: Color.fromRGBO(251, 151, 39, 1),
-                    child: Center(child: Text('\$13725', style:TextStyle(color: Colors.white ))),
-                    alignment: Alignment.centerLeft,
-                  ),
-                ),
-              ],
-            ),//copy here
-            Row(
-              children: <Widget>[
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    height: 45,
-                    margin: EdgeInsets.all(1.0),
-                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
-                    color: Color.fromRGBO(251, 151, 39, 1),
-                    child: Center(child: Text('Total Investment', style:TextStyle(color: Colors.white ))),
-                    alignment: Alignment.centerLeft,
-                  ),
-                ),
-                
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    height: 45,
-                    margin: EdgeInsets.all(1.0),
-
-                    // padding: EdgeInsets.all(30.0),
-                    color: Color.fromRGBO(251, 151, 39, 1),
-                    child: Center(child: Text('\$13075', style:TextStyle(color: Colors.white ))),
-                    alignment: Alignment.centerLeft,
-                  ),
-                ),
-              ],
-            ),//copy here
-            Row(
-              children: <Widget>[
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    height: 45,
-                    margin: EdgeInsets.all(1.0),
-                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
-                    color: Color.fromRGBO(251, 151, 39, 1),
-                    child: Center(child: Text('Total Profit/loss', style:TextStyle(color: Colors.white ))),
-                    alignment: Alignment.centerLeft,
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    height: 45,
-                    margin: EdgeInsets.all(1.0),
-
-                    // padding: EdgeInsets.all(30.0),
-                    color: Color.fromRGBO(251, 151, 39, 1),
-                    child: Center(child: Text('\$650', style:TextStyle(color: Colors.white ))),
-                    alignment: Alignment.centerLeft,
-                  ),
-                ),
-              ],
-            ),//copy here
-            Row(
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.fromLTRB(10, 20, 0, 20),
-                        child:Text("Outstanding amount to be invested (HKD)",style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1.2)) ,  
-                      )
-                    ],
-                ),
               Row(
               children: <Widget>[
                 Expanded(
@@ -240,7 +113,128 @@ var _price;
                   ),
                 ),
               ],
+            ),   
+              
+           Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 45,
+                    margin: EdgeInsets.all(1.0),
+                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
+                    color: Color.fromRGBO(255,60,65, 1),
+                    child: Center(child: Text('Paid Interest', style:TextStyle(color: Colors.white ))),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+                
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 45,
+                    margin: EdgeInsets.all(1.0),
+
+                    // padding: EdgeInsets.all(30.0),
+                    color: Color.fromRGBO(255,60,65, 1),
+                    child: Center(child: Text('\$0', style:TextStyle(color: Colors.white ))),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+              ],
+            ),//copy here
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 45,
+                    margin: EdgeInsets.all(1.0),
+                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
+                    color: Color.fromRGBO(255,60,65, 1),
+                    child: Center(child: Text('Total Market Price', style:TextStyle(color: Colors.white ))),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+                
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 45,
+                    margin: EdgeInsets.all(1.0),
+
+                    // padding: EdgeInsets.all(30.0),
+                    color: Color.fromRGBO(255,60,65, 1),
+                    child: Center(child: Text('\$13725', style:TextStyle(color: Colors.white ))),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+              ],
+            ),//copy here
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 45,
+                    margin: EdgeInsets.all(1.0),
+                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
+                    color: Color.fromRGBO(255,60,65, 1),
+                    child: Center(child: Text('Total Investment', style:TextStyle(color: Colors.white ))),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+                
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 45,
+                    margin: EdgeInsets.all(1.0),
+
+                    // padding: EdgeInsets.all(30.0),
+                    color: Color.fromRGBO(255,60,65, 1),
+                    child: Center(child: Text('\$13075', style:TextStyle(color: Colors.white ))),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+              ],
+            ),//copy here
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 45,
+                    margin: EdgeInsets.all(1.0),
+                    //padding: EdgeInsets.fromLTRB(10, 30, 30, 15),
+                    color: Color.fromRGBO(255,60,65, 1),
+                    child: Center(child: Text('Total Profit/loss', style:TextStyle(color: Colors.white ))),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 45,
+                    margin: EdgeInsets.all(1.0),
+
+                    // padding: EdgeInsets.all(30.0),
+                    color: Color.fromRGBO(255,60,65, 1),
+                    child: Center(child: Text('\$650', style:TextStyle(color: Colors.white ))),
+                    alignment: Alignment.centerLeft,
+                  ),
+                ),
+              ],
             ),
+             Container(
+                //color: Color.fromRGBO(50, 230, 221, 1),
+                height: 250,
+                width: double.maxFinite,
+                child: Image.asset('assets/investment_distribution.png'),
+                alignment: Alignment.center,
+                
+              ),
+            
             
             
             Row(
@@ -259,7 +253,7 @@ var _price;
                     
 
                     //here
-                    child: Center(child: Text('What you hold',style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1.2))),
+                    child: Center(child: Text('What stocks you are holding?',style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1.2))),
                   ),
                   ),
                 ),
