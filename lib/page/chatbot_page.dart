@@ -32,7 +32,7 @@ class _ChatbotState extends State<Chatbot> {
   Color ansColor3 = Colors.transparent;
 
   List<Message> message = [
-    Message('Hello Ms. Lee, what can I help you? You may ask me questions regarding stock trading: \n-	Trading hours of HKEX+ \n-	Pricing mechanism for stock trading \n-	Etc. Or schedule meeting with a Banker from BOCHK for advice. '),
+    Message('Hello Ms. Lee, what can I help you? You may ask me questions regarding stock trading: \n-	Trading hours of HKEX+ \n-	Pricing mechanism for stock trading \n-	Etc. \nOr schedule meeting with a Banker from BOCHK for advice. '),
     Message('Upon the completion of stock transaction, relevant shares and settlement amount will be credited to the investors’ securities accounts or settlement accounts within the second working day after the transaction date. To provide investors with the convenience of day trading, many banks and securities brokerage firms offer special stock settlement arrangement such that investors may use the proceeds from the sale of shares to perform other securities to perform other securities transaction immediately.'),
     Message('Dear Ms. Lee, please state the date and time you prefer to us, I will match banker for you.'),
     Message('Here are the availability of Banker:\n1. Mr. Wong – Diamond Hill Branch\n2. Ms. Chan – Fo Tan Branch\n3. Ms. Tse – Happy Valley Branch\nPlease confirm your choice.'),

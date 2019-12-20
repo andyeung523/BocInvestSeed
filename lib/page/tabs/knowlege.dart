@@ -27,8 +27,14 @@ class _KnowlegeState extends State<Knowledge> {
                   child: ClipRRect(
                     // borderRadius: BorderRadius.circular(50.0),
                   child: new Container(
-                    child: Center(child: Text('Chapter 1', style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),)),
-                    
+
+                    // child: Center(child: Text('Chapter 1', style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),)),
+                     child: 
+                     FittedBox(
+                      child: Image.asset('assets/book.JPG'),
+                      fit: BoxFit.fill,
+                    ),
+
                     margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
                     height: 250.0,
                     color: Colors.green,
@@ -81,7 +87,7 @@ class _KnowlegeState extends State<Knowledge> {
                     color: Colors.grey,
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Text("Investing Introduction     34%", style: TextStyle(fontSize: 30, color: Colors.white),),
+                      child: Text("Chapter 1 - Introduction to Investment                     34%", style: TextStyle(fontSize: 30, color: Colors.white),),
                     ),
                   ),
                   ),
@@ -100,8 +106,12 @@ class _KnowlegeState extends State<Knowledge> {
                   child: ClipRRect(
                     // borderRadius: BorderRadius.circular(50.0),
                   child: new Container(
-                    child: Center(child: Text('Chapter 2', style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),)),
-                    
+
+                    child:// Center(child: Text('Chapter 2', style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),)),
+                    FittedBox(
+                      child: Image.asset('assets/rocket.JPG'),
+                      fit: BoxFit.fill,
+                    ),
                     margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
                     height: 250.0,
                     color: Colors.red[200],
@@ -140,10 +150,10 @@ class _KnowlegeState extends State<Knowledge> {
                   child: new Container(
                     margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                     height: 100.0,
-                    color: Colors.red,
+                    color: Colors.orange[300],
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Text("Advanced Investing          0%", style: TextStyle(fontSize: 30, color: Colors.white),),
+                      child: Text("Chapter 2 - Advanced Investment                       0%", style: TextStyle(fontSize: 30, color: Colors.white),),
                     ),
 
                   ),
@@ -154,7 +164,71 @@ class _KnowlegeState extends State<Knowledge> {
               ],
             ),
 
+Row(
+              
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: ClipRRect(
+                    // borderRadius: BorderRadius.circular(50.0),
+                  child: new Container(
 
+                    child:// Center(child: Text('Chapter 2', style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),)),
+                    FittedBox(
+                      child: Image.asset('assets/bg_color.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                    margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                    height: 250.0,
+                    color: Colors.red[200],
+                  ),
+                  ),
+                ),
+
+              ]
+            ),
+            Row(
+              
+              children: <Widget>[
+                
+                
+                Expanded(
+                  
+                  flex: 4,
+                  child: ClipRRect(
+                  child: new Container(
+                    margin: EdgeInsets.fromLTRB(10,0, 10, 0),
+                    height: 10.0,
+                    color: Colors.grey[500],
+                    alignment: Alignment.centerLeft,
+                  ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              
+              children: <Widget>[
+                Expanded(
+                  
+                  flex: 2,
+                  child: ClipRRect(
+                  child: new Container(
+                    margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    height: 100.0,
+                    color: Colors.brown[200],
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text("Chapter 3 - Coming Soon     \n                                              0%", style: TextStyle(fontSize: 30, color: Colors.white),),
+                    ),
+
+                  ),
+                  ),
+                ),
+                
+                
+              ],
+            ),
 
             ]
           ),
