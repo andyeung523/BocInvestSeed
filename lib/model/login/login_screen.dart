@@ -78,7 +78,7 @@ class LoginScreen extends StatelessWidget {
          ),
          textFieldStyle: TextStyle(
            color: Colors.black,
-           shadows: [Shadow(color: Color.fromRGBO(255, 42, 51,1), blurRadius: 2)],
+           shadows: [Shadow(color: Color.fromRGBO(255, 42, 51,1), blurRadius: 1)],
          ),
          buttonStyle: TextStyle(
            fontWeight: FontWeight.w800,
@@ -126,7 +126,7 @@ class LoginScreen extends StatelessWidget {
            elevation: 0,
            highlightElevation: 0,
            shape: BeveledRectangleBorder(
-             borderRadius: BorderRadius.circular(10),
+             borderRadius: BorderRadius.circular(4),
            ),
            // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
            // shape: CircleBorder(side: BorderSide(color: Colors.green)),
