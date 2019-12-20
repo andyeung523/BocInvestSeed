@@ -153,7 +153,6 @@ var _price;
                     alignment: Alignment.centerLeft,
                   ),
                 ),
-                
                 Expanded(
                   flex: 1,
                   child: Container(
@@ -168,7 +167,14 @@ var _price;
                 ),
               ],
             ),//copy here
- 
+            Row(
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.fromLTRB(10, 20, 0, 20),
+                        child:Text("Outstanding amount to be invested (HKD)",style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1.2)) ,  
+                      )
+                    ],
+                ),
               Row(
               children: <Widget>[
                 Expanded(
@@ -180,7 +186,7 @@ var _price;
                     margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                     padding: EdgeInsets.all(15.0),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Center(child: Text('How many years of investment experience do you have?')),
+                    child: Center(child: Text('Total Balance')),
                   ),
                   ),
                 ),
@@ -213,7 +219,7 @@ var _price;
                     margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                     padding: EdgeInsets.all(15.0),
                     color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Center(child: Text('How many years of investment experience do you have?')),
+                    child: Center(child: Text('Circulating Cash')),
                   ),
                   ),
                 ),
