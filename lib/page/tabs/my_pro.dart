@@ -49,11 +49,11 @@ var _price;
                       fit: BoxFit.fill,
               ),   
               
-              Container(
-                color: Color.fromRGBO(50, 230, 221, 1),
-                height: 200,
+            Container(
+                //color: Color.fromRGBO(50, 230, 221, 1),
+                height: 350,
                 width: double.maxFinite,
-                child: Text('reserved',style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1.5),),
+                child: Image.asset('assets/investment_distribution.png'),
                 alignment: Alignment.center,
                 
               ),Row(
@@ -78,7 +78,7 @@ var _price;
 
                     // padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(159, 42, 51, 1),
-                    child: Center(child: Text('\$15,830', style:TextStyle(color: Colors.white ))),
+                    child: Center(child: Text('\$0', style:TextStyle(color: Colors.white ))),
                     alignment: Alignment.centerLeft,
                   ),
                 ),
@@ -106,7 +106,7 @@ var _price;
 
                     // padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(159, 42, 51, 1),
-                    child: Center(child: Text('\$88888888', style:TextStyle(color: Colors.white ))),
+                    child: Center(child: Text('\$13725', style:TextStyle(color: Colors.white ))),
                     alignment: Alignment.centerLeft,
                   ),
                 ),
@@ -134,7 +134,7 @@ var _price;
 
                     // padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(159, 42, 51, 1),
-                    child: Center(child: Text('\$888888', style:TextStyle(color: Colors.white ))),
+                    child: Center(child: Text('\$13075', style:TextStyle(color: Colors.white ))),
                     alignment: Alignment.centerLeft,
                   ),
                 ),
@@ -161,87 +161,12 @@ var _price;
 
                     // padding: EdgeInsets.all(30.0),
                     color: Color.fromRGBO(159, 42, 51, 1),
-                    child: Center(child: Text('860,000', style:TextStyle(color: Colors.white ))),
+                    child: Center(child: Text('\$650', style:TextStyle(color: Colors.white ))),
                     alignment: Alignment.centerLeft,
-                  ),
-                ),
-              ],
-            ),//copy here
-            Row(
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.fromLTRB(10, 20, 0, 20),
-                        child:Text("Outstanding amount to be invested (HKD)",style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1.2)) ,  
-                      )
-                    ],
-                ),
-              Row(
-              children: <Widget>[
-                Expanded(
-                  flex: 6,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(25.0),
-                  child: new Container(
-                    height: 45.0,
-                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                    padding: EdgeInsets.all(15.0),
-                    color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Center(child: Text('Total Balance')),
-                  ),
-                  ),
-                ),
-                
-                Expanded(
-                  
-                  flex: 4,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(25.0),
-                  child: new Container(
-                    height: 45.0,
-                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                    padding: EdgeInsets.all(15.0),
-                    color: Color.fromRGBO(240, 240, 240, 1),
-                    child: Center(child: Text('\$15, 000')),
-                    alignment: Alignment.centerLeft,
-                  ),
                   ),
                 ),
               ],
             ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                  flex: 6,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(25.0),
-                  child: new Container(
-                    height: 45.0,
-                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                    padding: EdgeInsets.all(15.0),
-                    color: Color.fromRGBO(255, 210, 213, 1),
-                    child: Center(child: Text('Circulating Cash')),
-                  ),
-                  ),
-                ),
-                
-                Expanded(
-                  
-                  flex: 4,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(25.0),
-                  child: new Container(
-                    height: 45.0,
-                    margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                    padding: EdgeInsets.all(15.0),
-                    color: Color.fromRGBO(240, 240, 240, 1),
-                    child: Center(child: Text('\$15, 000')),
-                    alignment: Alignment.centerLeft,
-                  ),
-                  ),
-                ),
-              ],
-            ),
-            
               
             ],
             
